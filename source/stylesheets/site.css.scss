@@ -1,0 +1,63 @@
+// Common variables and modules
+// =============================================================================
+
+// Fonts
+// -----------------------------------------------------------------------------
+
+// Web font definitions
+@import "fonts";
+
+$relative-font-sizing:     false;
+
+$base-font-family:         sans-serif;
+$base-font-size:           16px;
+$base-line-height:         24px;
+$base-font-color:          #333;
+$base-link-color:          #0073e5;
+$base-link-visited-color:  #471f99;
+
+
+// Imports
+// -----------------------------------------------------------------------------
+
+@import "compass";
+@import "modules/normalize";
+
+
+// Grid
+// -----------------------------------------------------------------------------
+
+@import "modules/grid";
+
+
+// Base rules
+// -----------------------------------------------------------------------------
+
+@include establish-baseline;
+
+body, select, input, textarea {
+  color: $base-font-color;
+}
+
+
+// Base page styles
+// -----------------------------------------------------------------------------
+
+@import "page";
+
+
+// Media queries
+// -----------------------------------------------------------------------------
+
+@import "media";
+
+
+// Print
+// -----------------------------------------------------------------------------
+
+@import "print";
+
+// Dropdown
+// -----------------------------------------------------------------------------
+
+@import "dropdown";

@@ -1,0 +1,34 @@
+/**
+ * Base page styles
+ */
+
+#wrapper {
+  @extend .grid;
+}
+
+#masthead {
+  @extend .grid-full;
+}
+
+#main {
+  @extend .grid-2-third;
+  margin-top: 40px;
+}
+
+#aside {
+  @extend .grid-1-third;
+}
+
+#footer {
+  @extend .grid-full;
+}
+
+#my-indented-friend {
+  @extend .grid-1-third;
+  @extend .grid-indent-9;
+}
+
+#dropdown01 {
+  margin-top: 70px;
+  width: 400px;
+}

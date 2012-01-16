@@ -1,0 +1,122 @@
+// -----------------------------------------------------------------------------
+// Set up grid variables
+// -----------------------------------------------------------------------------
+
+$columns:      12;
+$column-width: 60px;
+$gutter-width: 10px;
+
+$tablet-column-width: 44px;
+
+
+// Helper function to calculate column width
+
+@function columns-width($n, $width: $column-width) {
+  @return $n * $width + (($n - 1) * ($gutter-width * 2));
+}
+
+
+// Grid container class
+
+.grid {
+  overflow: hidden; zoom: 1;
+  margin: 0 $gutter-width;
+
+  @media only screen and (min-width: 480px) {
+    margin: 0 auto;
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    width: 480px - $gutter-width * 2;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 959px) {
+    width: columns-width($columns, $tablet-column-width) + $gutter-width * 2;
+  }
+
+  @media only screen and (min-width: 960px) {
+    width: columns-width($columns) + $gutter-width * 2;
+  }
+}
+
+
+// Base column class
+
+.column {
+  width: auto;
+  float: none;
+
+  @media only screen and (min-width: 768px) {
+    float: left;
+
+    margin-left:  $gutter-width;
+    margin-right: $gutter-width;
+  }
+}
+
+
+// Create grid column classes for every column width
+
+@for $i from 1 to $columns {
+  .grid-#{$i} {
+    @extend .column;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  @for $i from 1 to $columns {
+    .grid-#{$i} {
+      width: columns-width($i, $tablet-column-width);
+    }
+
+    .grid-indent-#{$i} {
+      margin-left: columns-width($i - 1, $tablet-column-width) + $gutter-width * 3;
+    }
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  @for $i from 1 to $columns {
+    .grid-#{$i} {
+      width: columns-width($i);
+    }
+
+    .grid-indent-#{$i} {
+      margin-left: columns-width($i - 1) + $gutter-width * 3;
+    }
+  }
+}
+
+
+// Create shortcut classes for grid columns
+
+.grid-full {
+  @extend .grid-#{$columns};
+}
+
+.grid-half {
+  @extend .grid-#{$columns / 2};
+}
+
+@for $i from 1 to 3 {
+  .grid-#{$i}-third {
+    @extend .grid-#{($columns / 3) * $i};
+  }
+}
+
+@for $i from 1 to 4 {
+  .grid-#{$i}-fourth {
+    @extend .grid-#{($columns / 4) * $i};
+  }
+}
+
+
+// Grid column classes to remove left/right margins
+
+.grid-alpha {
+  margin-left: 0;
+}
+
+.grid-omega {
+  margin-right: 0;
+}

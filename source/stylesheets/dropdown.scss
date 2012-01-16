@@ -1,0 +1,44 @@
+
+
+.ymDropdown {
+  
+  //position: relative;
+  background: #FFAAAA;
+  cursor: pointer;
+  
+  .label {
+    background: #010101;
+    color: #FFF;
+    width: 100%;
+  }
+  
+  .options {
+    width: 100%;
+    height: 0px;
+  }
+  
+  ul {
+    margin: 0px;
+    padding: 0px;
+    
+    li {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+      
+      a {
+        background: #CCC;
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        
+        &:hover {
+          background: #010101;
+        }
+        
+      }
+      
+    }
+  }
+  
+}

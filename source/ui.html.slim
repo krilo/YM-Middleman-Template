@@ -1,0 +1,160 @@
+---
+title: UI Styleguide
+---
+
+#styleguide
+
+  h1 UI Styleguide
+  p Styleguide for UI elements such as forms and tables
+  
+  h2 Tabular data
+  p Tables should be used when displaying tabular data. The thead, tfoot and tbody elements enable you to group rows within each a table.
+  p If you use these elements, you must use every element. They should appear in this order: thead, tfoot and tbody, so that browsers can render the foot before receiving all the data. You must use these tags within the table element.
+  
+  table
+    caption The Very Best Eggnog
+    colgroup
+      col style="width:15em;"
+      col style="width:6em;"
+      col style="width:6em;"
+    thead
+      tr
+        th scope="col"
+          | Ingredients
+        th scope="col"
+          | Serves 12
+        th scope="col"
+          | Serves 24
+    tbody
+      tr
+        td Milk
+        td 1 quart
+        td 2 quart
+      tr
+        td Vanilla Bean, Split
+        td 1
+        td 2
+        
+      tr
+        td Cloves
+        td 5
+        td 10
+      tr
+        td Mace
+        td 10 blades
+        td 20 blades
+      tr
+        td Egg Yolks
+        td 12
+        td 14
+      tr
+        td Cups Sugar
+        td 1 &frac12; cups
+        td 3 cups
+      tr
+        td Dark Rum
+        td 1 &frac12; cups
+        td 3 cups
+      tr
+        td Brandy
+        td 1 &frac12; cups
+        td 3 cups
+      tr
+        td Vanilla
+        td 1 tbsp
+        td 2 tbsp
+        
+  h2 Forms
+  p Forms can be used when you wish to collect data from users. The fieldset element enables you to group related fields within a form, and each one should contain a corresponding legend. The label element ensures field descriptions are associated with their corresponding form widgets.
+  
+  form action="#"
+    fieldset
+      legend Legend
+      div
+        label for="text"
+          | Text input 
+        input id="text" type="text"
+        em Note about this field 
+      div
+        label for="password"
+          | Password 
+        input id="password" type="password"
+        em Note about this field 
+      div
+        label for="url"
+          | Web Address 
+        input id="url" type="url"
+        em Note about this field 
+      div
+        label for="email"
+          | Email Address 
+        input id="email" type="email"
+        em Note about this field
+      div
+        label for="textarea"
+          | Text Area 
+        textarea id="textarea" rows="8" cols="48"
+        em Note about this field 
+      div
+        label for="email"
+          | Email Address 
+        input id="email" type="email"
+        em Note about this field
+      div
+        label for="checkbox"
+          | Single Checkbox 
+        label for="checkbox" class="check"
+          input id="checkbox" type="checkbox" class="checkbox"
+          |  Label
+        div
+          label for="select"
+          select id="select"
+            optgroup label="Option Group"
+              option Option one
+              option Option two
+              option Option three
+          em Note about this selection
+        fieldset class="options"
+          legend Checkbox
+          ul
+            li
+              label for="checkbox1"
+                input id="checkbox1" name="checkbox" type="checkbox" checked="checked"
+                  | Choice A
+            li
+              label for="checkbox2"
+                input id="checkbox2" name="checkbox" type="checkbox"
+                  | Choice B
+            li
+              label for="checkbox3"
+                input id="checkbox3" name="checkbox" type="checkbox"
+                  | Choice C
+                  
+        fieldset class="options"
+          legend Radio
+          ul
+            li
+              label for="radio1"
+                input id="radio1" name="radio" type="radio" checked="checked"
+                  | Option A
+            li
+              label for="radio2"
+                input id="radio2" name="radio" type="radio"
+                  | Option B
+          div class="submit"
+            input id="remark-preview" type="submit" value="Post Comment"
+            input id="remark-submit" type="button" value="Preview"
+            a href="#" Cancel
+        
+                     
+#dropdown01 class="ymDropdown"
+  .label
+    | Soon to be dropdown
+  .options
+    ul
+      li
+        a href="#" Teenage
+      li
+        a href="#" Mutant
+      li
+        a href="#" Ninjaturtles
